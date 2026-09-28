@@ -6,7 +6,8 @@
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-cedric--kouadio--dev-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/cedric-kouadio-dev)
 [![Email](https://img.shields.io/badge/Email-cedric.kouadio.dev%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:cedric.kouadio.dev@gmail.com)
-[![CV en ligne](https://img.shields.io/badge/CV-gomugomuno01.github.io%2Fcv-1a1a2e?style=flat-square&logo=github&logoColor=white)](https://gomugomuno01.github.io/cv/)
+[![CV en ligne](https://img.shields.io/badge/CV-gomugomuno01.github.io%2Fcv-1a1a2e?style=flat-square&logo=github&logoColor=white)](https://cedric-kouadio-portfolio.onrender.com) 
+
 
 </div>
 
