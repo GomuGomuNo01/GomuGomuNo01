@@ -14,11 +14,11 @@
 
 ## À propos
 
-Étudiant en **Mastère Intelligence Artificielle & Big Data** à l'ESGI Paris, après une Licence Professionnelle Réseaux & Génie Logiciel et un BTS Développement d'Applications en Côte d'Ivoire.
+Étudiant en Mastère Intelligence Artificielle & Big Data à l'ESGI Paris, je poursuis mon parcours après une Licence Professionnelle Réseaux & Génie Logiciel et un BTS Développement d'Applications obtenus en Côte d'Ivoire.
 
-Le code m'a d'abord attiré par ce qu'il permet de construire. J'ai commencé par développer des applications, puis je me suis spécialisé dans l'analyse de données : ce passage m'a appris à voir une donnée de bout en bout, depuis sa production dans le code jusqu'à la décision qu'elle permet de prendre. C'est cette continuité, entre le terrain technique et l'analyse, que j'essaie de mettre dans chaque projet ci-dessous.
+J'ai commencé par développer des applications, ce qui m'a permis de comprendre comment les données sont créées, stockées et utilisées dans un projet. Ensuite, je me suis orienté vers l'analyse de données afin de transformer ces données en informations claires et utiles pour les équipes.
 
-Ce qui m'intéresse aujourd'hui : transformer des données brutes en réponses claires à une question métier, avec des outils qui tournent vraiment, pas des prototypes qui dorment. La plupart des projets ci-dessous sont en ligne et testables en un clic.
+Aujourd'hui, cette double compétence en développement et en data me permet de travailler sur un projet de A à Z. Je peux partir de données brutes, les nettoyer et les analyser, puis créer un tableau de bord ou un outil simple qui aide à répondre à un besoin concret. Les projets présentés ci-dessous illustrent cette approche et sont, pour la plupart, disponibles en ligne et testables directement.
 
 ---
 
@@ -36,7 +36,7 @@ Ce qui m'intéresse aujourd'hui : transformer des données brutes en réponses c
 
 ## Projets Data & IA
 
-### [NYC Taxi — où positionner les chauffeurs ?](https://github.com/GomuGomuNo01/nyc-taxi-analyse-revenus)
+### [NYC Taxi : où positionner les chauffeurs ?](https://github.com/GomuGomuNo01/nyc-taxi-analyse-revenus)
 
 Une compagnie de taxis veut savoir où et quand positionner ses chauffeurs pour maximiser leur revenu par heure. L'analyse de 7,7 millions de courses réelles (New York, 2019) répond à cette question et débouche sur un dashboard Power BI, validé par 26 tests automatisés.
 
@@ -78,16 +78,6 @@ Candidater à de nombreuses offres en gardant chaque dossier pertinent prend du 
 
 `Claude Code` `MCP` `Python` `Go`
 
----
-
-## Projets Développement (le socle qui explique ma lecture de la donnée)
-
-### [Hotel Management System](https://github.com/GomuGomuNo01/hotel-management-system)
-
-Gère l'intégralité du cycle de vie d'un hôtel : réservations sans conflit de dates, paiements mobiles (Orange Money, Wave), arrivées, départs, ménage et réclamations. L'API Laravel et le frontend React communiquent en temps réel via WebSocket, pour que chaque mise à jour soit visible instantanément.
-
-`Laravel` `React` `MySQL` `WebSocket`
-
 ### [Sales Report Automation](https://github.com/GomuGomuNo01/sales-report-automation)
 
 Mettre en forme un rapport commercial à la main prend des heures et laisse place à l'erreur. Ce pipeline lit un export CSV brut, le nettoie, calcule les indicateurs clés et produit un PDF de 6 pages en 7 secondes, avec plus de 50 tests automatisés pour garantir sa fiabilité.
@@ -99,6 +89,16 @@ Mettre en forme un rapport commercial à la main prend des heures et laisse plac
 Six tâches manuelles (suivi de stock, envoi d'e-mails, collecte de données web) mobilisaient du temps chaque semaine. Ces scripts Python les exécutent seuls, d'abord en mode TEST puis en PRODUCTION, et sont en service depuis deux ans.
 
 `Python` `Selenium` `Playwright` `openpyxl`
+
+---
+
+## Projets Développement (le socle qui explique ma lecture de la donnée)
+
+### [Hotel Management System](https://github.com/GomuGomuNo01/hotel-management-system)
+
+Gère l'intégralité du cycle de vie d'un hôtel : réservations sans conflit de dates, paiements mobiles (Orange Money, Wave), arrivées, départs, ménage et réclamations. L'API Laravel et le frontend React communiquent en temps réel via WebSocket, pour que chaque mise à jour soit visible instantanément.
+
+`Laravel` `React` `MySQL` `WebSocket`
 
 ### [API REST JWT · Spring Boot](https://github.com/GomuGomuNo01/api-rest-jwt)
 
@@ -168,9 +168,28 @@ RAG, prompt engineering, serveurs MCP connectés à des outils maison, utilisati
 
 ---
 
+## Certifications
+
+| Certificat | Organisme | Date |
+|---|---|---|
+| [AWS SimuLearn : Les fondamentaux du cloud](certificates/AWS_SimuLearn_Les_fondamentaux_du_cloud.pdf) | AWS Training & Certification | Septembre 2026 |
+| [AWS SimuLearn : Premiers pas dans le cloud](certificates/AWS_SimuLearn_Premiers_pas_dans_le_cloud.pdf) | AWS Training & Certification | Septembre 2026 |
+
+---
+
 <div align="center">
+<table>
+<tr>
+<td>
 
-![Stats GitHub](https://github-readme-stats.vercel.app/api?username=GomuGomuNo01&show_icons=true&theme=dark&hide_border=true&count_private=true)
-![Langages les plus utilisés](https://github-readme-stats.vercel.app/api/top-langs/?username=GomuGomuNo01&layout=compact&theme=dark&hide_border=true)
+![Stats GitHub](https://github-readme-stats.vercel.app/api?username=GomuGomuNo01&show_icons=true&theme=tokyonight&hide_border=true&hide=issues,contribs&count_private=true&title_color=58a6ff&icon_color=58a6ff)
 
+</td>
+<td>
+
+![Langages les plus utilisés](https://github-readme-stats.vercel.app/api/top-langs/?username=GomuGomuNo01&layout=compact&theme=tokyonight&hide_border=true&title_color=58a6ff&langs_count=8)
+
+</td>
+</tr>
+</table>
 </div>
