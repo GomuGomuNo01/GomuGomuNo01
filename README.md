@@ -12,12 +12,6 @@
 
 ---
 
-Étudiant en **Mastère Informatique, IA & Big Data** à l'ESGI Paris. J'ai passé deux ans à construire les applications qui produisent la donnée ; aujourd'hui, je l'analyse. Connaître les deux côtés change ma façon de travailler : je comprends à la fois comment une donnée est produite et comment la transformer en décision.
-
-Je cherche une **alternance à partir de septembre 2026** en Île-de-France, sur des sujets Data Analyst, Data Scientist ou Data Engineer. La plupart des projets ci-dessous sont en ligne et testables en un clic.
-
----
-
 ## À tester tout de suite
 
 | | Projet | Ce que ça fait |
@@ -152,13 +146,3 @@ RAG, prompt engineering, serveurs MCP connectés à des outils maison, utilisati
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
-
----
-
-<div align="center">
-
-📍 **Île-de-France (Paris & région)** · Alternance dès **septembre 2026** · rythme 3 semaines entreprise / 1 semaine école
-
-[![LinkedIn](https://img.shields.io/badge/Contactez--moi_sur_LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/cedric-kouadio-dev)
-
-</div>
