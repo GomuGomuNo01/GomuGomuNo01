@@ -6,8 +6,7 @@
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-cedric--kouadio--dev-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/cedric-kouadio-dev)
 [![Email](https://img.shields.io/badge/Email-cedric.kouadio.dev%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:cedric.kouadio.dev@gmail.com)
-[![CV en ligne](https://img.shields.io/badge/CV-gomugomuno01.github.io%2Fcv-1a1a2e?style=flat-square&logo=github&logoColor=white)](https://cedric-kouadio-portfolio.onrender.com) 
-
+[![Portfolio](https://img.shields.io/badge/Portfolio-cedric--kouadio--portfolio.onrender.com-1a1a2e?style=flat-square&logo=render&logoColor=white)](https://cedric-kouadio-portfolio.onrender.com)
 
 </div>
 
@@ -153,17 +152,6 @@ RAG, prompt engineering, serveurs MCP connectés à des outils maison, utilisati
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
-
----
-
-## Formation
-
-| Diplôme | Établissement | Période |
-|---------|---------------|---------|
-| Mastère Informatique, IA & Big Data *(alternance)* | ESGI Paris | sept. 2026 → |
-| Mastère Informatique, IA & Management de projet numérique | ESIIA Torcy | 2025–2026 |
-| Licence Professionnelle Réseaux & Génie Logiciel | PIGIER Côte d'Ivoire | 2021–2024 |
-| BTS Développement d'Applications | PIGIER Côte d'Ivoire | 2021–2022 |
 
 ---
 
