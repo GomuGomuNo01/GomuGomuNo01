@@ -45,55 +45,55 @@ Aujourd'hui, cette double compétence en développement et en data me permet de 
 
 ### [NYC Taxi : où positionner les chauffeurs ?](https://github.com/GomuGomuNo01/nyc-taxi-analyse-revenus)
 
-Une compagnie de taxis veut savoir où et quand positionner ses chauffeurs pour maximiser leur revenu par heure. L'analyse de 7,7 millions de courses réelles (New York, 2019) répond à cette question et débouche sur un dashboard Power BI, validé par 26 tests automatisés.
+Une compagnie de taxis veut savoir où et quand positionner ses chauffeurs pour maximiser leur revenu par heure. L'analyse de 7,7 millions de courses réelles à New York en 2019 identifie les zones et créneaux les plus rentables et débouche sur un dashboard Power BI validé par 26 tests automatisés.
 
 `Python` `PySpark` `SQL` `Power BI` `DAX`
 
 ### [Maven Toys Analytics](https://github.com/GomuGomuNo01/maven-toys-powerbi-analytics)
 
-Une enseigne de 50 magasins voit son chiffre d'affaires progresser, mais pas sa marge. L'analyse de 829 262 ventes révèle que les ruptures de stock lui coûtent 29 069 $ par mois, et le dashboard Power BI (66 mesures DAX) transforme ce constat en recommandations chiffrées.
+Une enseigne de 50 magasins voit son chiffre d'affaires progresser, mais sa marge se dégrade. L'analyse de 829 262 ventes révèle que les ruptures de stock représentent un manque à gagner estimé à 29 069 $ par mois, puis transforme ce constat en recommandations concrètes grâce à un dashboard Power BI.
 
 `Power BI` `DAX` `Power Query` `Python`
 
 ### [Contoso Sales Analytics](https://github.com/GomuGomuNo01/contoso-sales-powerbi)
 
-Le chiffre d'affaires d'un distributeur recule de 33 % (43,8M$ → 29,3M$), sans explication claire. L'analyse de 225 000 ventes identifie les catégories de produits les plus touchées, et le dashboard Power BI associé (30 mesures DAX) rend ce diagnostic lisible pour la direction commerciale.
+Le chiffre d'affaires d'un distributeur recule de 33 % (43,8 M$ à 29,3 M$), sans explication claire. L'analyse de 225 000 ventes identifie les catégories et segments les plus touchés, puis restitue le diagnostic à la direction commerciale dans un dashboard Power BI conçu pour faciliter la prise de décision.
 
 `Power BI` `DAX` `Power Query` `Python`
 
 ### [SBS Bank](https://github.com/GomuGomuNo01/Simple-Banking-System-Python)
 
-Une néobanque simulée veut savoir si ses partenaires commerciaux lui amènent de bons clients. Sur 18 mois d'activité (1 800 clients, 254 000 opérations), l'analyse montre que ces clients activent leur compte deux fois moins souvent que les autres (test du khi-deux à l'appui), d'où six recommandations priorisées.
+Une néobanque simulée veut vérifier si ses partenaires commerciaux lui apportent des clients réellement actifs. L'analyse de 254 000 opérations sur 18 mois montre que les clients issus de ces partenaires utilisent leur compte deux fois moins souvent que les autres, ce qui permet de formuler six recommandations commerciales prioritaires.
 
 `Python` `SQL` `Segmentation RFM` `Tests statistiques`
 
 ### [Telco Churn Prediction](https://github.com/GomuGomuNo01/telco-churn-prediction)
 
-Une entreprise télécoms perd des clients chaque mois sans savoir lesquels cibler en priorité. Neuf modèles de machine learning sont comparés sur 7 043 clients, et celui retenu (Naive Bayes) détecte 73 % des résiliations réelles, un choix assumé au détriment de l'accuracy brute.
+Un opérateur télécom perd des clients chaque mois sans savoir lesquels cibler en priorité. Après comparaison de neuf modèles sur 7 043 clients, le modèle retenu détecte 73 % des résiliations réelles et aide l'entreprise à concentrer ses actions de fidélisation sur les profils les plus à risque.
 
 `Python` `scikit-learn` `Machine Learning`
 
 ### [Chatbot RAG · DocAssist](https://github.com/GomuGomuNo01/Chatbot-RAG)
 
-Retrouver une information dans des documents internes prend du temps et le résultat n'est pas toujours fiable. Cet assistant IA cherche la réponse dans les documents, cite systématiquement sa source, et refuse de répondre plutôt que d'inventer quand l'information est absente.
+Retrouver une information dans des documents internes prend du temps et les réponses peuvent manquer de fiabilité. DocAssist recherche les passages pertinents, cite ses sources et indique clairement lorsqu'une information est absente, afin d'aider les équipes à trouver une réponse vérifiable plus rapidement.
 
 `Python` `LangChain` `FAISS` `FastAPI`
 
 ### [Career-Ops](https://github.com/GomuGomuNo01/career-ops)
 
-Candidater à de nombreuses offres en gardant chaque dossier pertinent prend du temps. Cet agent, construit sur Claude Code, analyse une offre, génère les documents de candidature correspondants et met à jour un tableau de suivi, via 14 modes spécialisés et des serveurs MCP connectés à des outils maison.
+Candidater à plusieurs offres devient rapidement difficile lorsque les informations sont dispersées entre les annonces, les CV et les tableaux de suivi. Career-Ops centralise les dossiers de candidature, analyse les offres et met à jour automatiquement leur statut grâce à des agents IA et à des outils connectés.
 
 `Claude Code` `MCP` `Python` `Go`
 
 ### [Sales Report Automation](https://github.com/GomuGomuNo01/sales-report-automation)
 
-Mettre en forme un rapport commercial à la main prend des heures et laisse place à l'erreur. Ce pipeline lit un export CSV brut, le nettoie, calcule les indicateurs clés et produit un PDF de 6 pages en 7 secondes, avec plus de 50 tests automatisés pour garantir sa fiabilité.
+Préparer un rapport commercial à la main prend plusieurs heures et augmente le risque d'erreur. Ce pipeline transforme un fichier CSV brut en un rapport PDF de six pages en sept secondes, calcule automatiquement les indicateurs clés et s'appuie sur plus de 50 tests automatisés pour garantir la fiabilité du résultat.
 
-`Python` `pandas` `reportlab` `pytest`
+`Python` `pandas` `ReportLab` `pytest`
 
 ### [Automatisation de Processus](https://github.com/GomuGomuNo01/automatisation-de-processus)
 
-Six tâches manuelles (suivi de stock, envoi d'e-mails, collecte de données web) mobilisaient du temps chaque semaine. Ces scripts Python les exécutent seuls, d'abord en mode TEST puis en PRODUCTION, et sont en service depuis deux ans.
+Six tâches manuelles, suivi de stock, envoi d'e-mails et collecte de données en ligne, mobilisent du temps chaque semaine. Ces scripts Python exécutent désormais les opérations seuls, sont testés avant chaque mise en production et fonctionnent en service depuis deux ans.
 
 `Python` `Selenium` `Playwright` `openpyxl`
 
@@ -103,25 +103,25 @@ Six tâches manuelles (suivi de stock, envoi d'e-mails, collecte de données web
 
 ### [Hotel Management System](https://github.com/GomuGomuNo01/hotel-management-system)
 
-Gère l'intégralité du cycle de vie d'un hôtel : réservations sans conflit de dates, paiements mobiles (Orange Money, Wave), arrivées, départs, ménage et réclamations. L'API Laravel et le frontend React communiquent en temps réel via WebSocket, pour que chaque mise à jour soit visible instantanément.
+Un hôtel doit gérer les réservations, les paiements, les arrivées, les départs et les réclamations sans créer de conflits entre les informations. Cette application centralise le cycle de vie des séjours, tandis que les mises à jour sont immédiatement visibles grâce à la communication en temps réel entre le serveur et l'interface.
 
 `Laravel` `React` `MySQL` `WebSocket`
 
 ### [API REST JWT · Spring Boot](https://github.com/GomuGomuNo01/api-rest-jwt)
 
-Une API doit être sécurisée sans devenir difficile à maintenir. Celle-ci authentifie chaque utilisateur par JWT et gère les droits par rôle, dans une architecture en couches (Controller / Service / Repository) couverte par des tests JUnit et documentée avec Swagger.
+Une application métier doit protéger ses données sans devenir difficile à maintenir. Cette API authentifie chaque utilisateur, applique des droits selon son rôle et fournit une documentation claire pour faciliter son intégration et son évolution.
 
-`Java` `Spring Boot` `Spring Security` `JUnit`
+`Java` `Spring Boot` `Spring Security` `JUnit` `Swagger`
 
 ### [Mini-CRM](https://github.com/GomuGomuNo01/mini_crm)
 
-Centralise le suivi des clients et des contrats d'une entreprise, plutôt que de les disperser entre tableurs et e-mails. L'application web (ASP.NET Core, Entity Framework Core) restitue les indicateurs clés dans un tableau de bord et s'appuie sur MySQL pour la persistance des données.
+Les informations clients et contrats sont souvent dispersées entre des tableurs et des e-mails. Cette application centralise leur suivi, restitue les indicateurs clés dans un tableau de bord et conserve les données dans une base structurée pour faciliter le pilotage commercial.
 
 `C#` `ASP.NET Core 8` `EF Core` `MySQL`
 
 ### [Hospital](https://github.com/GomuGomuNo01/Hospital)
 
-Les données de santé exigent un accès strictement contrôlé. Ce système sépare les droits en trois rôles (administrateur, médecin, infirmier), impose une authentification à deux facteurs et enregistre chaque action dans un journal d'audit inaltérable.
+Les données de santé exigent un accès strictement contrôlé et une traçabilité complète. Ce système sépare les droits entre administrateur, médecin et infirmier, impose une authentification à deux facteurs et enregistre chaque action dans un journal d'audit pour renforcer la sécurité.
 
 `Laravel` `PHP` `Blade` `MySQL`
 
