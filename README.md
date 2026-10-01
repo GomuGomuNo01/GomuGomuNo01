@@ -191,28 +191,15 @@ RAG, prompt engineering, serveurs MCP connectés à des outils maison, utilisati
 <table>
 <tr>
 <td align="center" width="50%">
-
-![Stats GitHub](https://github-readme-stats.vercel.app/api?username=GomuGomuNo01&show_icons=true&theme=tokyonight&hide_border=true&hide=issues,contribs&count_private=true&title_color=58a6ff&icon_color=58a6ff&card_width=320)
-
+<img width="400" src="https://github-readme-stats.vercel.app/api?username=GomuGomuNo01&show_icons=true&theme=tokyonight&hide_border=true&hide=issues,contribs&count_private=true&title_color=58a6ff&icon_color=58a6ff&card_width=400" alt="Stats GitHub"/>
 </td>
 <td align="center" width="50%">
-
-![Streak de contributions](https://streak-stats.demolab.com?user=GomuGomuNo01&theme=tokyonight&hide_border=true&ring=58a6ff&fire=e94560&currStreakLabel=58a6ff)
-
+<img width="400" src="https://streak-stats.demolab.com?user=GomuGomuNo01&theme=tokyonight&hide_border=true&ring=58a6ff&fire=e94560&currStreakLabel=58a6ff" alt="Streak de contributions"/>
 </td>
 </tr>
 <tr>
 <td align="center" colspan="2">
-
-![Langages les plus utilisés](https://github-readme-stats.vercel.app/api/top-langs/?username=GomuGomuNo01&layout=compact&theme=tokyonight&hide_border=true&title_color=58a6ff&langs_count=8&card_width=660)
-
-</td>
-</tr>
-<tr>
-<td align="center" colspan="2">
-
-![Répartition de l'activité](https://github-profile-summary-cards.vercel.app/api/cards/stats?username=GomuGomuNo01&theme=tokyonight)
-
+<img width="820" src="https://github-readme-stats.vercel.app/api/top-langs/?username=GomuGomuNo01&layout=compact&theme=tokyonight&hide_border=true&title_color=58a6ff&langs_count=8&card_width=820" alt="Langages les plus utilisés"/>
 </td>
 </tr>
 </table>
