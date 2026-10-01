@@ -30,6 +30,7 @@ Aujourd'hui, cette double compétence en développement et en data me permet de 
 | ▶ | [**Dashboard · NYC Taxi**](https://github.com/GomuGomuNo01/nyc-taxi-analyse-revenus/releases/latest/download/NYC_Taxi_Dashboard.pbix) | Fichier Power BI prêt à l'emploi, données incluses |
 | ▶ | [**Dashboard · Maven Toys**](https://github.com/GomuGomuNo01/maven-toys-powerbi-analytics/releases/download/v1.0/MavenToys_Pilotage.pbix) | Fichier Power BI prêt à l'emploi, données incluses |
 | ▶ | [**Dashboard · Contoso Sales**](https://github.com/GomuGomuNo01/contoso-sales-powerbi/releases/download/v1.0/Contoso-Ventes.pbix) | Fichier Power BI prêt à l'emploi, données incluses |
+| ▶ | [**Dashboard · SBS Bank**](https://github.com/GomuGomuNo01/Simple-Banking-System-Python/releases/download/v1.0/SBS_Bank.pbix) | Fichier Power BI prêt à l'emploi, données incluses |
 | ▶ | [**Colab · Sales Report**](https://colab.research.google.com/github/GomuGomuNo01/sales-report-automation/blob/main/demo_colab.ipynb) | Un CSV en entrée, un rapport PDF complet en 7 s |
 | ▶ | [**Codespaces · Automatisations**](https://github.com/codespaces/new/GomuGomuNo01/automatisation-de-processus) | 6 automatisations métier, environnement prêt à l'emploi |
 | ▶ | [**Swagger · API REST JWT**](https://jwt-api-gkdg.onrender.com/swagger-ui.html) | API sécurisée déployée, documentation interactive |
