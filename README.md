@@ -1,12 +1,16 @@
 <div align="center">
 
-# Cédric KOUADIO
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0f3460,100:1a1a2e&height=200&section=header&text=Cédric%20Kouadio&fontSize=46&fontColor=ffffff&animation=fadeIn&fontAlignY=36&desc=Data%20Analyst%20·%20Data%20Scientist%20·%20Data%20Engineer&descAlignY=54&descSize=18&descColor=e94560" alt="Bannière"/>
 
-**Data Analyst · Data Scientist · Data Engineer**
+<a href="https://github.com/GomuGomuNo01">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=2800&pause=900&color=58A6FF&center=true&vCenter=true&width=640&lines=Transforme+des+donn%C3%A9es+brutes+en+d%C3%A9cisions;De+la+requ%C3%AAte+SQL+au+dashboard+Power+BI;Python+%C2%B7+Power+BI+%C2%B7+Machine+Learning+%C2%B7+RAG" alt="Typing SVG"/>
+</a>
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-cedric--kouadio--dev-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/cedric-kouadio-dev)
 [![Email](https://img.shields.io/badge/Email-cedric.kouadio.dev%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:cedric.kouadio.dev@gmail.com)
 [![Portfolio](https://img.shields.io/badge/Portfolio-cedric--kouadio--portfolio.onrender.com-1a1a2e?style=flat-square&logo=render&logoColor=white)](https://cedric-kouadio-portfolio.onrender.com)
+
+<img width="100%" src="https://raw.githubusercontent.com/GomuGomuNo01/GomuGomuNo01/output/github-contribution-grid-snake-dark.svg" alt="Animation du graphique de contributions"/>
 
 </div>
 
@@ -180,7 +184,12 @@ RAG, prompt engineering, serveurs MCP connectés à des outils maison, utilisati
 
 ---
 
+## Activité
+
 <div align="center">
+
+![Courbe d'activité](https://github-readme-activity-graph.vercel.app/graph?username=GomuGomuNo01&theme=tokyo-night&hide_border=true&area=true&area_color=58a6ff&line=58a6ff&point=e94560)
+
 <table>
 <tr>
 <td>
