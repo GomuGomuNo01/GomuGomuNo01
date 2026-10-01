@@ -188,7 +188,7 @@ RAG, prompt engineering, serveurs MCP connectés à des outils maison, utilisati
 
 <div align="center">
 
-![Courbe d'activité](https://github-readme-activity-graph.vercel.app/graph?username=GomuGomuNo01&theme=tokyo-night&hide_border=true&area=true&area_color=58a6ff&line=58a6ff&point=e94560)
+![Streak de contributions](https://streak-stats.demolab.com?user=GomuGomuNo01&theme=tokyonight&hide_border=true&ring=58a6ff&fire=e94560&currStreakLabel=58a6ff)
 
 <table>
 <tr>
