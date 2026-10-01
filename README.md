@@ -208,5 +208,12 @@ RAG, prompt engineering, serveurs MCP connectés à des outils maison, utilisati
 
 </td>
 </tr>
+<tr>
+<td align="center" colspan="2">
+
+![Répartition de l'activité](https://github-profile-summary-cards.vercel.app/api/cards/stats?username=GomuGomuNo01&theme=tokyonight)
+
+</td>
+</tr>
 </table>
 </div>
