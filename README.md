@@ -188,18 +188,21 @@ RAG, prompt engineering, serveurs MCP connectés à des outils maison, utilisati
 
 <div align="center">
 
-![Streak de contributions](https://streak-stats.demolab.com?user=GomuGomuNo01&theme=tokyonight&hide_border=true&ring=58a6ff&fire=e94560&currStreakLabel=58a6ff)
-
 <table>
 <tr>
-<td>
+<td align="center" width="33%" valign="top">
 
-![Stats GitHub](https://github-readme-stats.vercel.app/api?username=GomuGomuNo01&show_icons=true&theme=tokyonight&hide_border=true&hide=issues,contribs&count_private=true&title_color=58a6ff&icon_color=58a6ff)
+![Stats GitHub](https://github-readme-stats.vercel.app/api?username=GomuGomuNo01&show_icons=true&theme=tokyonight&hide_border=true&hide=issues,contribs&count_private=true&title_color=58a6ff&icon_color=58a6ff&card_width=320)
 
 </td>
-<td>
+<td align="center" width="34%" valign="top">
 
-![Langages les plus utilisés](https://github-readme-stats.vercel.app/api/top-langs/?username=GomuGomuNo01&layout=compact&theme=tokyonight&hide_border=true&title_color=58a6ff&langs_count=8)
+![Streak de contributions](https://streak-stats.demolab.com?user=GomuGomuNo01&theme=tokyonight&hide_border=true&ring=58a6ff&fire=e94560&currStreakLabel=58a6ff)
+
+</td>
+<td align="center" width="33%" valign="top">
+
+![Langages les plus utilisés](https://github-readme-stats.vercel.app/api/top-langs/?username=GomuGomuNo01&layout=compact&theme=tokyonight&hide_border=true&title_color=58a6ff&langs_count=8&card_width=320)
 
 </td>
 </tr>
