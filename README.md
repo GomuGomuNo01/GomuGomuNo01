@@ -16,16 +16,6 @@
 
 ---
 
-## À propos
-
-Étudiant en Mastère Intelligence Artificielle & Big Data à l'ESGI Paris, je poursuis mon parcours après une Licence Professionnelle Réseaux & Génie Logiciel et un BTS Développement d'Applications obtenus en Côte d'Ivoire.
-
-J'ai commencé par développer des applications, ce qui m'a permis de comprendre comment les données sont créées, stockées et utilisées dans un projet. Ensuite, je me suis orienté vers l'analyse de données afin de transformer ces données en informations claires et utiles pour les équipes.
-
-Aujourd'hui, cette double compétence en développement et en data me permet de travailler sur un projet de A à Z. Je peux partir de données brutes, les nettoyer et les analyser, puis créer un tableau de bord ou un outil simple qui aide à répondre à un besoin concret. Les projets présentés ci-dessous illustrent cette approche et sont, pour la plupart, disponibles en ligne et testables directement.
-
----
-
 ## À tester tout de suite
 
 | | Projet | Ce que ça fait |
