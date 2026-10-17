@@ -1,4 +1,4 @@
-name: Génère l'animation du serpent
+name: Génère les animations du profil
 
 on:
   schedule:
@@ -15,13 +15,21 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - name: Génère le SVG animé
+      - name: Récupère le dépôt
+        uses: actions/checkout@v4
+
+      - name: Génère le SVG animé du serpent
         uses: Platane/snk@v3
         with:
           github_user_name: GomuGomuNo01
           outputs: |
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+
+      - name: Génère la carte d'activité
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/generate_activity_card.py dist/activity-card.svg
 
       - name: Publie sur la branche output
         uses: crazy-max/ghaction-github-pages@v4

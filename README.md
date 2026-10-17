@@ -1,9 +1,9 @@
 <div align="center">
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0f3460,100:1a1a2e&height=200&section=header&text=Cédric%20Kouadio&fontSize=46&fontColor=ffffff&animation=fadeIn&fontAlignY=36&desc=Data%20Analyst%20·%20Data%20Scientist%20·%20Data%20Engineer&descAlignY=54&descSize=18&descColor=e94560" alt="Bannière"/>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0f3460,100:1a1a2e&height=200&section=header&text=Cédric%20Kouadio&fontSize=46&fontColor=ffffff&animation=fadeIn&fontAlignY=36&desc=D%C3%A9veloppeur%20Fullstack%20%C2%B7%20Data%20(Analyst%2C%20Scientist%2C%20Engineer)%20%C2%B7%20Automatisation%20%26%20Agents%20IA&descAlignY=54&descSize=15&descColor=e94560" alt="Bannière"/>
 
 <a href="https://github.com/GomuGomuNo01">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=2800&pause=900&color=58A6FF&center=true&vCenter=true&width=640&lines=Transforme+des+donn%C3%A9es+brutes+en+d%C3%A9cisions;De+la+requ%C3%AAte+SQL+au+dashboard+Power+BI;Python+%C2%B7+Power+BI+%C2%B7+Machine+Learning+%C2%B7+RAG" alt="Typing SVG"/>
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=2800&pause=900&color=58A6FF&center=true&vCenter=true&width=640&lines=Du+backend+au+dashboard+%3A+des+outils+qui+tournent+vraiment;Transforme+des+donn%C3%A9es+brutes+en+d%C3%A9cisions;Automatise+les+t%C3%A2ches+r%C3%A9p%C3%A9titives+avec+Python+et+des+agents+IA" alt="Typing SVG"/>
 </a>
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-cedric--kouadio--dev-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/cedric-kouadio-dev)
@@ -25,8 +25,9 @@
 | ▶ | [**Dashboard · Maven Toys**](https://github.com/GomuGomuNo01/maven-toys-powerbi-analytics/releases/download/v1.0/MavenToys_Pilotage.pbix) | Fichier Power BI prêt à l'emploi, données incluses |
 | ▶ | [**Dashboard · Contoso Sales**](https://github.com/GomuGomuNo01/contoso-sales-powerbi/releases/download/v1.0/Contoso-Ventes.pbix) | Fichier Power BI prêt à l'emploi, données incluses |
 | ▶ | [**Dashboard · SBS Bank**](https://github.com/GomuGomuNo01/Simple-Banking-System-Python/releases/download/v1.0/SBS_Bank.pbix) | Fichier Power BI prêt à l'emploi, données incluses |
-| ▶ | [**Colab · Sales Report**](https://colab.research.google.com/github/GomuGomuNo01/sales-report-automation/blob/main/demo_colab.ipynb) | Un CSV en entrée, un rapport PDF complet en 7 s |
-| ▶ | [**Codespaces · Automatisations**](https://github.com/codespaces/new/GomuGomuNo01/automatisation-de-processus) | 6 automatisations métier, environnement prêt à l'emploi |
+| ▶ | [**Démo · Sales Report**](https://sales-report-automation-cedric.streamlit.app/) | Un fichier CSV en entrée, un rapport PDF complet en 7 s |
+| ▶ | [**Démo · Automatisations**](https://automatisation-de-processus-cedric.streamlit.app/) | 6 automatisations métier, démo interactive en ligne |
+| ▶ | [**Démo · Instagram Unlike Cleaner**](https://gomugomuno01.github.io/Instagram-Unlike-Cleaner/) | La vraie interface sur des données fictives, sans compte ni installation |
 | ▶ | [**Swagger · API REST JWT**](https://jwt-api-gkdg.onrender.com/swagger-ui.html) | API sécurisée déployée, documentation interactive |
 
 ---
@@ -89,7 +90,13 @@ Six tâches manuelles, suivi de stock, envoi d'e-mails et collecte de données e
 
 ---
 
-## Projets Développement (le socle qui explique ma lecture de la donnée)
+## Projets Développement Fullstack
+
+### [Instagram Unlike Cleaner](https://github.com/GomuGomuNo01/Instagram-Unlike-Cleaner)
+
+Effacer à la main des années de « J'aime » Instagram prend des heures, et confier son mot de passe à un service tiers est risqué. Cet outil 100 % local filtre les likes, fait valider chacun d'eux avant suppression et les retire par lots, sans jamais voir le mot de passe : 1 493 likes recensés en 14 minutes sur un compte réel, avec 313 tests automatisés.
+
+`Python` `FastAPI` `React` `TypeScript` `Playwright`
 
 ### [Hotel Management System](https://github.com/GomuGomuNo01/hotel-management-system)
 
@@ -140,7 +147,7 @@ SQL avancé (CTE, fonctions de fenêtrage, vues analytiques) · DAX et modélisa
 
 RAG, prompt engineering, serveurs MCP connectés à des outils maison, utilisation quotidienne de Claude Code
 
-**Développement (le socle qui explique ma lecture de la donnée)**
+**Développement Fullstack**
 
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white)
@@ -148,6 +155,8 @@ RAG, prompt engineering, serveurs MCP connectés à des outils maison, utilisati
 ![C#](https://img.shields.io/badge/C%23-512BD4?style=flat-square&logo=dotnet&logoColor=white)
 ![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=flat-square&logo=laravel&logoColor=white)
 ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white)
 ![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white)
 
 **Bases de données**
@@ -178,19 +187,8 @@ RAG, prompt engineering, serveurs MCP connectés à des outils maison, utilisati
 
 <div align="center">
 
-<table>
-<tr>
-<td align="center" width="50%">
-<img width="400" src="https://github-readme-stats.vercel.app/api?username=GomuGomuNo01&show_icons=true&theme=tokyonight&hide_border=true&hide=issues,contribs&count_private=true&title_color=58a6ff&icon_color=58a6ff&card_width=400" alt="Stats GitHub"/>
-</td>
-<td align="center" width="50%">
-<img width="400" src="https://streak-stats.demolab.com?user=GomuGomuNo01&theme=tokyonight&hide_border=true&ring=58a6ff&fire=e94560&currStreakLabel=58a6ff" alt="Streak de contributions"/>
-</td>
-</tr>
-<tr>
-<td align="center" colspan="2">
-<img width="820" src="https://github-readme-stats.vercel.app/api/top-langs/?username=GomuGomuNo01&layout=compact&theme=tokyonight&hide_border=true&title_color=58a6ff&langs_count=8&card_width=820" alt="Langages les plus utilisés"/>
-</td>
-</tr>
-</table>
+<a href="https://cedric-kouadio-portfolio.onrender.com">
+  <img width="640" src="https://raw.githubusercontent.com/GomuGomuNo01/GomuGomuNo01/output/activity-card.svg" alt="Activité GitHub : contributions des 6 derniers mois, jours actifs, série en cours, dépôts publics et langages"/>
+</a>
+
 </div>
