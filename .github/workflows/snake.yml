@@ -29,7 +29,9 @@ jobs:
       - name: Génère la carte d'activité
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python scripts/generate_activity_card.py dist/activity-card.svg
+        run: |
+          sudo chown -R "$(id -u):$(id -g)" dist
+          python scripts/generate_activity_card.py dist/activity-card.svg
 
       - name: Publie sur la branche output
         uses: crazy-max/ghaction-github-pages@v4
