@@ -31,7 +31,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           sudo chown -R "$(id -u):$(id -g)" dist
-          python scripts/generate_activity_card.py dist/activity-card.svg
+          python scripts/generate_activity_card.py dist
 
       - name: Publie sur la branche output
         uses: crazy-max/ghaction-github-pages@v4

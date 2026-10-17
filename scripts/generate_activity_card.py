@@ -1,4 +1,4 @@
-"""Génère activity-card.svg : carte d'activité GitHub (style terminal) à partir des données publiques réelles."""
+"""Génère les cartes d'activité GitHub (thèmes sombre et clair, palette Primer) à partir des données publiques réelles."""
 import base64
 import datetime as dt
 import json
@@ -10,12 +10,12 @@ from xml.sax.saxutils import escape
 
 LOGIN = os.environ.get("GH_LOGIN", "GomuGomuNo01")
 TOKEN = os.environ["GH_TOKEN"]
-OUT = sys.argv[1] if len(sys.argv) > 1 else "activity-card.svg"
+OUT_DIR = sys.argv[1] if len(sys.argv) > 1 else "."
 
 QUERY = """
 query($login: String!) {
   user(login: $login) {
-    name login location createdAt avatarUrl
+    name login createdAt avatarUrl
     repositories(privacy: PUBLIC, first: 100, orderBy: {field: PUSHED_AT, direction: DESC}) {
       totalCount
       nodes { name isFork pushedAt primaryLanguage { name } }
@@ -36,7 +36,15 @@ LANG_COLORS = {
     "Java": "#b07219", "C#": "#178600", "TypeScript": "#3178c6", "CSS": "#663399",
 }
 MONTHS = ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."]
-HEAT = ["#1c1917", "#5a2d1c", "#9a4524", "#d45a28", "#ff7a3d"]
+
+THEMES = {
+    "dark": dict(bg="#0d1117", border="#30363d", divider="#21262d", text="#e6edf3", muted="#8b949e",
+                 link="#58a6ff", green="#3fb950", tile="#161b22",
+                 heat=["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"]),
+    "light": dict(bg="#ffffff", border="#d0d7de", divider="#d8dee4", text="#1f2328", muted="#656d76",
+                  link="#0969da", green="#1a7f37", tile="#f6f8fa",
+                  heat=["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"]),
+}
 
 
 def gql():
@@ -54,7 +62,8 @@ def gql():
 
 def avatar_b64(url):
     sep = "&" if "?" in url else "?"
-    with urllib.request.urlopen(urllib.request.Request(f"{url}{sep}s=120", headers={"User-Agent": "activity-card"}), timeout=30) as r:
+    req = urllib.request.Request(f"{url}{sep}s=120", headers={"User-Agent": "activity-card"})
+    with urllib.request.urlopen(req, timeout=30) as r:
         return base64.b64encode(r.read()).decode()
 
 
@@ -67,136 +76,145 @@ def relative(pushed, now):
     return f"il y a {days // 30} mois"
 
 
-def main():
+def collect():
     u = gql()
     now = dt.datetime.now(dt.timezone.utc)
     cal = u["contributionsCollection"]["contributionCalendar"]
     days = [d for w in cal["weeks"] for d in w["contributionDays"]]
-    total = cal["totalContributions"]
-    active = sum(1 for d in days if d["contributionCount"] > 0)
-
     today = now.date().isoformat()
     seq = [d for d in days if d["date"] <= today]
+
     streak, idx = 0, len(seq) - 1
     if idx >= 0 and seq[idx]["contributionCount"] == 0:
         idx -= 1
     while idx >= 0 and seq[idx]["contributionCount"] > 0:
         streak += 1
         idx -= 1
-
-    weeks = cal["weeks"][-26:]
-    peak = max((d["contributionCount"] for w in weeks for d in w["contributionDays"]), default=1) or 1
+    best, run = 0, 0
+    for d in seq:
+        run = run + 1 if d["contributionCount"] > 0 else 0
+        best = max(best, run)
 
     repos = u["repositories"]["nodes"]
-    own = [r for r in repos if not r["isFork"]]
     langs = {}
-    for r in own:
-        if r["primaryLanguage"]:
-            langs[r["primaryLanguage"]["name"]] = langs.get(r["primaryLanguage"]["name"], 0) + 1
-    top_langs = sorted(langs.items(), key=lambda kv: -kv[1])[:5]
-    lang_total = sum(c for _, c in top_langs) or 1
-    recent = [r for r in repos][:3]
+    for r in repos:
+        if not r["isFork"] and r["primaryLanguage"]:
+            n = r["primaryLanguage"]["name"]
+            langs[n] = langs.get(n, 0) + 1
+    ranked = sorted(langs.items(), key=lambda kv: -kv[1])
+    total_l = sum(langs.values()) or 1
+    top = ranked[:5]
+    others = sum(c for _, c in ranked[5:])
 
-    W, H = 640, 640
-    name = escape(u["name"] or u["login"])
-    since = u["createdAt"][:4]
-    city = escape((u["location"] or "").split(",")[0].strip())
-    meta = f"@{escape(u['login'])}" + (f" · {city}" if city else "") + f" · sur GitHub depuis {since}"
+    return dict(
+        now=now, name=u["name"] or u["login"], login=u["login"], since=u["createdAt"][:4],
+        avatar=avatar_b64(u["avatarUrl"]), weeks=cal["weeks"][-53:],
+        total=cal["totalContributions"], active=sum(1 for d in days if d["contributionCount"] > 0),
+        streak=streak, best=best, repos=u["repositories"]["totalCount"],
+        top=top, others=others, total_l=total_l, recent=repos[:3],
+    )
 
+
+def build(t, c):
+    W, H = 900, 470
     out = []
     a = out.append
-    a(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="Activité GitHub de {name}">')
-    a("""<style>
-      .mono{font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
-      .sans{font-family:'Segoe UI',Helvetica,Arial,sans-serif}
-      .cell{opacity:0;animation:pop .5s ease-out forwards}
-      @keyframes pop{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:scale(1)}}
-      .cur{animation:blink 1s steps(1) infinite}
-      @keyframes blink{50%{opacity:0}}
-      .live{animation:pulse 1.8s ease-in-out infinite}
-      @keyframes pulse{50%{opacity:.25}}
+    a(f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" '
+      f'aria-label="Activité GitHub de {escape(c["name"])} : {c["total"]} contributions publiques sur 12 mois">')
+    a(f"""<style>
+      .sans{{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif}}
+      .mono{{font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace}}
+      .cell{{opacity:0;animation:pop .45s ease-out forwards}}
+      @keyframes pop{{from{{opacity:0;transform:scale(.3)}}to{{opacity:1;transform:scale(1)}}}}
     </style>""")
-    a(f'<clipPath id="av"><circle cx="70" cy="98" r="26"/></clipPath>')
-    a(f'<rect x="0.5" y="0.5" width="{W-1}" height="{H-1}" rx="14" fill="#0b0b0c" stroke="#262626"/>')
-    a(f'<path d="M1 36 H{W-1}" stroke="#1f1f1f"/>')
-    for i, c in enumerate(("#ff5f57", "#ffbd2e", "#28c840")):
-        a(f'<circle cx="{26+i*18}" cy="18" r="5.5" fill="{c}"/>')
-    a(f'<text x="{W/2}" y="22" text-anchor="middle" class="mono" font-size="12" fill="#6b6b6b" letter-spacing="1.5">github.com/{escape(u["login"].lower())}</text>')
-    a(f'<circle cx="{W-86}" cy="18" r="3.5" fill="#28c840" class="live"/><text x="{W-76}" y="22" class="mono" font-size="11" fill="#28c840" letter-spacing="1.5">LIVE</text>')
+    a(f'<clipPath id="av"><circle cx="64" cy="40" r="20"/></clipPath>')
+    a(f'<rect x="0.5" y="0.5" width="{W-1}" height="{H-1}" rx="6" fill="{t["bg"]}" stroke="{t["border"]}"/>')
 
-    a(f'<circle cx="70" cy="98" r="28" fill="none" stroke="#ff7a3d" stroke-opacity=".6" stroke-width="2"/>')
-    a(f'<image href="data:image/jpeg;base64,{avatar_b64(u["avatarUrl"])}" x="44" y="72" width="52" height="52" clip-path="url(#av)" preserveAspectRatio="xMidYMid slice"/>')
-    a(f'<text x="112" y="92" class="sans" font-size="21" font-weight="700" fill="#f4f4f4">{name}</text>')
-    a(f'<text x="112" y="114" class="sans" font-size="12.5" fill="#8a8a8a">{meta}</text>')
-    a(f'<rect x="{W-146}" y="80" width="104" height="34" rx="17" fill="none" stroke="#ff7a3d" stroke-opacity=".7"/>')
-    a(f'<text x="{W-94}" y="102" text-anchor="middle" class="mono" font-size="11.5" fill="#ff7a3d" letter-spacing="1.5">PROFIL ↗</text>')
+    a(f'<circle cx="64" cy="40" r="21" fill="none" stroke="{t["border"]}"/>')
+    a(f'<image href="data:image/jpeg;base64,{c["avatar"]}" x="44" y="20" width="40" height="40" clip-path="url(#av)" preserveAspectRatio="xMidYMid slice"/>')
+    a(f'<text x="98" y="36" class="sans" font-size="16" font-weight="600" fill="{t["text"]}">{escape(c["name"])}</text>')
+    a(f'<text x="98" y="55" class="sans" font-size="12.5" fill="{t["muted"]}">@{escape(c["login"])} · sur GitHub depuis {c["since"]}</text>')
+    a(f'<text x="{W-44}" y="38" class="sans" font-size="26" font-weight="600" fill="{t["green"]}" text-anchor="end">{c["total"]}</text>')
+    a(f'<text x="{W-44}" y="56" class="sans" font-size="12.5" fill="{t["muted"]}" text-anchor="end">contributions publiques sur les 12 derniers mois</text>')
+    a(f'<path d="M0 78 H{W}" stroke="{t["divider"]}"/>')
 
-    a(f'<text x="44" y="158" class="mono" font-size="13" fill="#d8d8d8"><tspan fill="#ff7a3d">$</tspan> git log --since="6 months" --author=cedric<tspan class="cur" fill="#ff7a3d">▌</tspan></text>')
-
-    gx, gy, cs, gap = 44, 214, 16, 4
+    gx, gy, cs, step = 84, 122, 12, 14.5
+    peak = max((d["contributionCount"] for w in c["weeks"] for d in w["contributionDays"]), default=1) or 1
+    for row, label in ((1, "Lun"), (3, "Mer"), (5, "Ven")):
+        a(f'<text x="44" y="{gy + row*step + 10}" class="sans" font-size="11" fill="{t["muted"]}">{label}</text>')
     last_month = None
-    for ci, w in enumerate(weeks):
+    for ci, w in enumerate(c["weeks"]):
         first = dt.date.fromisoformat(w["contributionDays"][0]["date"])
-        if first.month != last_month:
-            a(f'<text x="{gx+ci*(cs+gap)}" y="{gy-12}" class="sans" font-size="11" fill="#6b6b6b">{MONTHS[first.month-1]}</text>')
+        if first.month != last_month and ci < len(c["weeks"]) - 2:
+            a(f'<text x="{gx + ci*step}" y="{gy-12}" class="sans" font-size="11" fill="{t["muted"]}">{MONTHS[first.month-1]}</text>')
             last_month = first.month
         for d in w["contributionDays"]:
             n = d["contributionCount"]
             lvl = 0 if n == 0 else max(1, min(4, math.ceil(n / peak * 4)))
-            x, y = gx + ci * (cs + gap), gy + d["weekday"] * (cs + gap)
-            delay = (ci * 0.035)
-            a(f'<rect class="cell" style="animation-delay:{delay:.2f}s;transform-origin:{x+cs/2}px {y+cs/2}px" x="{x}" y="{y}" width="{cs}" height="{cs}" rx="3" fill="{HEAT[lvl]}"><title>{d["date"]} : {n}</title></rect>')
+            x, y = gx + ci * step, gy + d["weekday"] * step
+            a(f'<rect class="cell" style="animation-delay:{ci*0.03:.2f}s;transform-origin:{x+cs/2}px {y+cs/2}px" '
+              f'x="{x:.1f}" y="{y:.1f}" width="{cs}" height="{cs}" rx="2" fill="{t["heat"][lvl]}">'
+              f'<title>{d["date"]} : {n} contribution{"s" if n > 1 else ""}</title></rect>')
 
-    ly = gy + 7 * (cs + gap) + 8
-    a(f'<text x="{W-44-5*14-44}" y="{ly+10}" class="sans" font-size="11" fill="#6b6b6b" text-anchor="end">moins</text>')
-    for i, c in enumerate(HEAT):
-        a(f'<rect x="{W-44-5*14-36+i*14}" y="{ly}" width="11" height="11" rx="2" fill="{c}"/>')
-    a(f'<text x="{W-44}" y="{ly+10}" class="sans" font-size="11" fill="#6b6b6b" text-anchor="end">plus</text>')
+    ly = gy + 7 * step + 6
+    a(f'<text x="{W-44-5*15-34}" y="{ly+10}" class="sans" font-size="11" fill="{t["muted"]}" text-anchor="end">Moins</text>')
+    for i, col in enumerate(t["heat"]):
+        a(f'<rect x="{W-44-5*15-28+i*15}" y="{ly}" width="{cs}" height="{cs}" rx="2" fill="{col}"/>')
+    a(f'<text x="{W-44}" y="{ly+10}" class="sans" font-size="11" fill="{t["muted"]}" text-anchor="end">Plus</text>')
 
-    sy = ly + 40
-    a(f'<path d="M44 {sy-18} H{W-44}" stroke="#1f1f1f"/>')
-    stats = [(total, "CONTRIBUTIONS / 12 MOIS", "#ff7a3d"), (active, "JOURS ACTIFS", "#f4f4f4"),
-             (f"{streak} j", "SÉRIE EN COURS", "#f4f4f4"), (u["repositories"]["totalCount"], "DÉPÔTS PUBLICS", "#f4f4f4")]
-    for i, (v, lab, col) in enumerate(stats):
-        x = [44, 232, 368, 494][i]
-        a(f'<text x="{x}" y="{sy+22}" class="sans" font-size="28" font-weight="800" fill="{col}">{v}</text>')
-        a(f'<text x="{x}" y="{sy+42}" class="mono" font-size="9.5" fill="#6b6b6b" letter-spacing="1">{lab}</text>')
+    ty = ly + 34
+    a(f'<path d="M0 {ty-12} H{W}" stroke="{t["divider"]}"/>')
+    stats = [(c["total"], "Contributions"), (c["active"], "Jours actifs"), (f'{c["streak"]} j', "Série en cours"),
+             (f'{c["best"]} j', "Meilleure série"), (c["repos"], "Dépôts publics")]
+    cw = (W - 88) / len(stats)
+    for i, (v, lab) in enumerate(stats):
+        x = 44 + i * cw
+        if i:
+            a(f'<path d="M{x-12:.1f} {ty+4} V{ty+50}" stroke="{t["divider"]}"/>')
+        a(f'<text x="{x:.1f}" y="{ty+28}" class="sans" font-size="26" font-weight="600" fill="{t["text"]}">{v}</text>')
+        a(f'<text x="{x:.1f}" y="{ty+48}" class="sans" font-size="12.5" fill="{t["muted"]}">{lab}</text>')
 
-    by = sy + 66
-    a(f'<path d="M44 {by-14} H{W-44}" stroke="#1f1f1f"/>')
-    x = 44
-    bw = W - 88
-    for i, (lg, c) in enumerate(top_langs):
-        w_ = bw * c / lang_total
-        col = LANG_COLORS.get(lg, "#8b949e")
-        a(f'<rect x="{x:.1f}" y="{by}" width="{max(w_-2,2):.1f}" height="8" rx="4" fill="{col}"/>')
+    by = ty + 78
+    a(f'<path d="M0 {by-12} H{W}" stroke="{t["divider"]}"/>')
+    a(f'<text x="44" y="{by+12}" class="sans" font-size="13" font-weight="600" fill="{t["text"]}">Langages</text>')
+    bw, x = 380, 44.0
+    segs = [(n, cnt) for n, cnt in c["top"]] + ([("Autres", c["others"])] if c["others"] else [])
+    a(f'<clipPath id="bar"><rect x="44" y="{by+24}" width="{bw}" height="8" rx="4"/></clipPath><g clip-path="url(#bar)">')
+    for n, cnt in segs:
+        w_ = bw * cnt / c["total_l"]
+        a(f'<rect x="{x:.1f}" y="{by+24}" width="{w_:.1f}" height="8" fill="{LANG_COLORS.get(n, "#8b949e")}"/>')
         x += w_
-    lx = 44
-    for lg, c in top_langs:
-        col = LANG_COLORS.get(lg, "#8b949e")
-        a(f'<circle cx="{lx+4}" cy="{by+30}" r="4" fill="{col}"/>')
-        label = f"{escape(lg)} {c}"
-        a(f'<text x="{lx+14}" y="{by+34}" class="sans" font-size="12" fill="#cfcfcf">{label}</text>')
-        lx += 22 + len(label) * 6.6
-    a(f'<text x="{W-44}" y="{by+34}" class="sans" font-size="11" fill="#6b6b6b" text-anchor="end">dépôts par langage</text>')
+    a("</g>")
+    for i, (n, cnt) in enumerate(segs):
+        col, row = i % 2, i // 2
+        lx, ly2 = 44 + col * 195, by + 56 + row * 22
+        a(f'<circle cx="{lx+5}" cy="{ly2-4}" r="5" fill="{LANG_COLORS.get(n, "#8b949e")}"/>')
+        a(f'<text x="{lx+16}" y="{ly2}" class="sans" font-size="12.5" fill="{t["text"]}" font-weight="600">{escape(n)}</text>')
+        a(f'<text x="{lx+16+len(n)*7.1+8:.0f}" y="{ly2}" class="sans" font-size="12.5" fill="{t["muted"]}">{round(100*cnt/c["total_l"])} %</text>')
 
-    ry = by + 72
-    for i, r in enumerate(recent):
-        y = ry + i * 26
-        a(f'<circle cx="48" cy="{y-4}" r="3" fill="#28c840"/>')
-        a(f'<text x="62" y="{y}" class="mono" font-size="13" font-weight="600" fill="#f0f0f0">{escape(r["name"])}</text>')
-        lg = r["primaryLanguage"]["name"] if r["primaryLanguage"] else None
-        if lg:
-            tx = 398
-            a(f'<circle cx="{tx}" cy="{y-4}" r="4" fill="{LANG_COLORS.get(lg, "#8b949e")}"/>')
-            a(f'<text x="{tx+10}" y="{y}" class="sans" font-size="12" fill="#8a8a8a">{escape(lg)}</text>')
+    rx = 500
+    a(f'<text x="{rx}" y="{by+12}" class="sans" font-size="13" font-weight="600" fill="{t["text"]}">Activité récente</text>')
+    for i, r in enumerate(c["recent"]):
+        y = by + 44 + i * 30
+        a(f'<path d="M{rx} {y-12} H{W-44}" stroke="{t["divider"]}"/>' if i else "")
+        a(f'<rect x="{rx}" y="{y-9}" width="12" height="14" rx="2" fill="none" stroke="{t["muted"]}" stroke-width="1.4"/>')
+        a(f'<text x="{rx+22}" y="{y+2}" class="sans" font-size="13.5" font-weight="600" fill="{t["link"]}">{escape(r["name"])}</text>')
         pushed = dt.datetime.fromisoformat(r["pushedAt"].replace("Z", "+00:00"))
-        a(f'<text x="{W-44}" y="{y}" class="sans" font-size="12" fill="#8a8a8a" text-anchor="end">{relative(pushed, now)}</text>')
+        a(f'<text x="{W-44}" y="{y+2}" class="sans" font-size="12.5" fill="{t["muted"]}" text-anchor="end">{relative(pushed, c["now"])}</text>')
 
     a("</svg>")
-    with open(OUT, "w", encoding="utf-8") as f:
-        f.write("\n".join(out))
-    print(f"OK {OUT}: total={total} actifs={active} serie={streak} depots={u['repositories']['totalCount']}")
+    return "\n".join(out)
+
+
+def main():
+    c = collect()
+    os.makedirs(OUT_DIR, exist_ok=True)
+    for name, theme in THEMES.items():
+        path = os.path.join(OUT_DIR, f"activity-card-{name}.svg")
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(build(theme, c))
+        print(f"OK {path}")
+    print(f"total={c['total']} actifs={c['active']} serie={c['streak']} meilleure={c['best']} depots={c['repos']}")
 
 
 main()
