@@ -299,7 +299,7 @@ Déploiement sur Render, Hugging Face Spaces, Streamlit Community Cloud et GitHu
 
 <div align="center">
 
-<a href="https://github.com/GomuGomuNo01?tab=repositories">
+<a href="https://cedric-kouadio-portfolio.onrender.com/">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/GomuGomuNo01/GomuGomuNo01/output/activity-card-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/GomuGomuNo01/GomuGomuNo01/output/activity-card-light.svg">
