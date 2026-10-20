@@ -126,6 +126,12 @@ def build(t, c):
       .mono{{font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace}}
       .cell{{opacity:0;animation:pop .45s ease-out forwards}}
       @keyframes pop{{from{{opacity:0;transform:scale(.3)}}to{{opacity:1;transform:scale(1)}}}}
+      .lit{{animation:pop .45s ease-out forwards,glow 7s ease-out infinite}}
+      @keyframes glow{{0%{{filter:none}}3%{{filter:brightness(1.9) drop-shadow(0 0 4px {t["heat"][4]})}}12%,100%{{filter:none}}}}
+      .beam{{opacity:0;animation:scan 7s linear 1.6s infinite}}
+      @keyframes scan{{0%{{opacity:0;transform:translateX(0)}}3%{{opacity:1}}63%{{opacity:1}}66%,100%{{opacity:0;transform:translateX(__SWEEP__px)}}}}
+      .today{{animation:ring 1.6s ease-in-out infinite}}
+      @keyframes ring{{0%,100%{{opacity:.15}}50%{{opacity:1}}}}
     </style>""")
     a(f'<clipPath id="av"><circle cx="64" cy="40" r="20"/></clipPath>')
     a(f'<rect x="0.5" y="0.5" width="{W-1}" height="{H-1}" rx="6" fill="{t["bg"]}" stroke="{t["border"]}"/>')
@@ -142,6 +148,13 @@ def build(t, c):
     peak = max((d["contributionCount"] for w in c["weeks"] for d in w["contributionDays"]), default=1) or 1
     for row, label in ((1, "Lun"), (3, "Mer"), (5, "Ven")):
         a(f'<text x="44" y="{gy + row*step + 10}" class="sans" font-size="11" fill="{t["muted"]}">{label}</text>')
+    ncol = len(c["weeks"])
+    sweep = ncol * step + 30
+    a(f'<clipPath id="grid"><rect x="{gx}" y="{gy}" width="{ncol*step}" height="{7*step}"/></clipPath>')
+    a(f'<linearGradient id="bm" x1="0" x2="1"><stop offset="0" stop-color="{t["heat"][4]}" stop-opacity="0"/>'
+      f'<stop offset=".7" stop-color="{t["heat"][4]}" stop-opacity=".28"/><stop offset="1" stop-color="{t["heat"][4]}" stop-opacity="0"/></linearGradient>')
+    today = c["now"].date().isoformat()
+    last_day = max(d["date"] for w in c["weeks"] for d in w["contributionDays"] if d["date"] <= today)
     last_month = None
     for ci, w in enumerate(c["weeks"]):
         first = dt.date.fromisoformat(w["contributionDays"][0]["date"])
@@ -152,10 +165,15 @@ def build(t, c):
             n = d["contributionCount"]
             lvl = 0 if n == 0 else max(1, min(4, math.ceil(n / peak * 4)))
             x, y = gx + ci * step, gy + d["weekday"] * step
-            a(f'<rect class="cell" style="animation-delay:{ci*0.03:.2f}s;transform-origin:{x+cs/2}px {y+cs/2}px" '
+            hit = 1.6 + 7 * 0.66 * (ci * step + 15) / sweep
+            cls, delay = ("cell lit", f"{ci*0.03:.2f}s,{hit:.2f}s") if n else ("cell", f"{ci*0.03:.2f}s")
+            if d["date"] == last_day:
+                a(f'<rect class="today" x="{x-2:.1f}" y="{y-2:.1f}" width="{cs+4}" height="{cs+4}" rx="3" fill="none" stroke="{t["green"]}" stroke-width="1.5"/>')
+            a(f'<rect class="{cls}" style="animation-delay:{delay};transform-origin:{x+cs/2}px {y+cs/2}px" '
               f'x="{x:.1f}" y="{y:.1f}" width="{cs}" height="{cs}" rx="2" fill="{t["heat"][lvl]}">'
               f'<title>{d["date"]} : {n} contribution{"s" if n > 1 else ""}</title></rect>')
 
+    a(f'<g clip-path="url(#grid)"><rect class="beam" x="{gx-30}" y="{gy}" width="30" height="{7*step}" fill="url(#bm)"/></g>')
     ly = gy + 7 * step + 6
     a(f'<text x="{W-44-5*15-34}" y="{ly+10}" class="sans" font-size="11" fill="{t["muted"]}" text-anchor="end">Moins</text>')
     for i, col in enumerate(t["heat"]):
@@ -203,7 +221,7 @@ def build(t, c):
         a(f'<text x="{W-44}" y="{y+2}" class="sans" font-size="12.5" fill="{t["muted"]}" text-anchor="end">{relative(pushed, c["now"])}</text>')
 
     a("</svg>")
-    return "\n".join(out)
+    return "\n".join(out).replace("__SWEEP__", f"{sweep:.1f}")
 
 
 def main():
