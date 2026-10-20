@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="8" viewBox="0 0 1000 8" preserveAspectRatio="none" role="presentation">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#58a6ff" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#e94560"/>
+      <stop offset="1" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <style>.s{animation:s 4.5s ease-in-out infinite}@keyframes s{from{transform:translateX(-320px)}to{transform:translateX(1000px)}}</style>
+  <rect y="3.5" width="1000" height="1" fill="#8b949e" fill-opacity=".35"/>
+  <rect class="s" y="2.5" width="320" height="3" rx="1.5" fill="url(#g)"/>
+</svg>
