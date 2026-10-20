@@ -6,7 +6,6 @@
 [![Email](https://img.shields.io/badge/Email-cedric.kouadio.dev%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:cedric.kouadio.dev@gmail.com)
 [![Portfolio](https://img.shields.io/badge/Portfolio-cedric--kouadio--portfolio.onrender.com-1a1a2e?style=flat-square&logo=render&logoColor=white)](https://cedric-kouadio-portfolio.onrender.com)
 
-<img width="100%" src="https://raw.githubusercontent.com/GomuGomuNo01/GomuGomuNo01/output/github-contribution-grid-snake-dark.svg" alt="Animation du graphique de contributions"/>
 
 </div>
 
