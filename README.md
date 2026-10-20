@@ -1,10 +1,6 @@
 <div align="center">
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0f3460,100:1a1a2e&height=200&section=header&text=C%C3%A9dric%20Kouadio&fontSize=46&fontColor=ffffff&animation=fadeIn&fontAlignY=36&desc=D%C3%A9veloppeur%20Fullstack%20%C2%B7%20Data%20(Analyst%2C%20Scientist%2C%20Engineer)%20%C2%B7%20Automatisation%20%26amp%3B%20Agents%20IA&descAlignY=54&descSize=15&descColor=e94560" alt="Bannière"/>
-
-<a href="https://github.com/GomuGomuNo01">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=18&duration=2800&pause=900&color=58A6FF&center=true&vCenter=true&width=780&height=40&lines=Du+backend+au+dashboard+%3A+des+outils+qui+tournent+vraiment;Transforme+des+donn%C3%A9es+brutes+en+d%C3%A9cisions;Automatise+les+t%C3%A2ches+r%C3%A9p%C3%A9titives+avec+Python+et+des+agents+IA" alt="Typing SVG"/>
-</a>
+<img width="100%" src="assets/header.svg" alt="Cédric Kouadio, Développeur Fullstack, Data (Analyst, Scientist, Engineer), Automatisation et Agents IA"/>
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-cedric--kouadio--dev-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/cedric-kouadio-dev)
 [![Email](https://img.shields.io/badge/Email-cedric.kouadio.dev%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:cedric.kouadio.dev@gmail.com)
@@ -14,7 +10,7 @@
 
 </div>
 
----
+<img width="100%" src="assets/divider.svg" alt=""/>
 
 ## À tester tout de suite
 
@@ -123,7 +119,7 @@ La plupart des projets ont une vidéo de présentation de 20 à 60 secondes, et 
 </tbody>
 </table>
 
----
+<img width="100%" src="assets/divider.svg" alt=""/>
 
 ## Projets Data & IA
 
@@ -181,7 +177,7 @@ Six tâches répétitives, comme le suivi des stocks, l’envoi d’e-mails et l
 
 `Python` `Selenium` `pandas` `openpyxl` `Streamlit`
 
----
+<img width="100%" src="assets/divider.svg" alt=""/>
 
 ## Projets Développement Fullstack
 
@@ -215,9 +211,11 @@ Les données de santé exigent un accès strictement contrôlé et une traçabil
 
 `Laravel` `PHP` `Blade` `MySQL`
 
----
+<img width="100%" src="assets/divider.svg" alt=""/>
 
 ## Stack technique
+
+<img width="100%" src="assets/tech-marquee.svg" alt="Technologies utilisées dans mes projets"/>
 
 **Data & Analyse**
 
@@ -284,7 +282,7 @@ Collecte de données web, envoi d'e-mails SMTP, orchestration TEST / PRODUCTION,
 
 Déploiement sur Render, Hugging Face Spaces, Streamlit Community Cloud et GitHub Pages
 
----
+<img width="100%" src="assets/divider.svg" alt=""/>
 
 ## Certifications
 
@@ -293,7 +291,7 @@ Déploiement sur Render, Hugging Face Spaces, Streamlit Community Cloud et GitHu
 | [AWS SimuLearn : Les fondamentaux du cloud](certificates/AWS_SimuLearn_Les_fondamentaux_du_cloud.pdf) | AWS Training & Certification | Septembre 2026 |
 | [AWS SimuLearn : Premiers pas dans le cloud](certificates/AWS_SimuLearn_Premiers_pas_dans_le_cloud.pdf) | AWS Training & Certification | Septembre 2026 |
 
----
+<img width="100%" src="assets/divider.svg" alt=""/>
 
 ## Activité
 

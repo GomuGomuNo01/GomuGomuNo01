@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="280" viewBox="0 0 1000 280" role="img" aria-label="Cédric Kouadio, Développeur Fullstack, Data (Analyst, Scientist, Engineer), Automatisation et Agents IA">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1020"/>
+      <stop offset="1" stop-color="#101a33"/>
+    </linearGradient>
+    <radialGradient id="glowA"><stop offset="0" stop-color="#e94560" stop-opacity=".45"/><stop offset="1" stop-color="#e94560" stop-opacity="0"/></radialGradient>
+    <radialGradient id="glowB"><stop offset="0" stop-color="#3b82f6" stop-opacity=".45"/><stop offset="1" stop-color="#3b82f6" stop-opacity="0"/></radialGradient>
+    <radialGradient id="glowC"><stop offset="0" stop-color="#22c55e" stop-opacity=".25"/><stop offset="1" stop-color="#22c55e" stop-opacity="0"/></radialGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#58a6ff"/>
+      <stop offset="1" stop-color="#e94560"/>
+    </linearGradient>
+    <linearGradient id="area" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#58a6ff" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#ffffff" fill-opacity=".09"/>
+    </pattern>
+    <clipPath id="frame"><rect width="1000" height="280" rx="18"/></clipPath>
+  </defs>
+
+  <style>
+    .sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace}
+    .glowA{animation:driftA 14s ease-in-out infinite alternate}
+    .glowB{animation:driftB 18s ease-in-out infinite alternate}
+    .glowC{animation:driftC 22s ease-in-out infinite alternate}
+    @keyframes driftA{from{transform:translate(0,0)}to{transform:translate(220px,60px)}}
+    @keyframes driftB{from{transform:translate(0,0)}to{transform:translate(-260px,-40px)}}
+    @keyframes driftC{from{transform:translate(0,0)}to{transform:translate(120px,-70px)}}
+    .up{opacity:0;animation:up .9s cubic-bezier(.2,.7,.2,1) forwards}
+    @keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+    .d1{animation-delay:.15s}.d2{animation-delay:.45s}.d3{animation-delay:.65s}.d4{animation-delay:.9s}
+    .draw{stroke-dasharray:620;stroke-dashoffset:620;animation:draw 7s ease-in-out infinite}
+    @keyframes draw{0%{stroke-dashoffset:620}45%,80%{stroke-dashoffset:0}100%{stroke-dashoffset:-620}}
+    .areaf{opacity:0;animation:areaf 7s ease-in-out infinite}
+    @keyframes areaf{0%,25%{opacity:0}50%,78%{opacity:1}100%{opacity:0}}
+    .pt{opacity:0;animation:pt 7s ease-in-out infinite}
+    @keyframes pt{0%,40%{opacity:0;transform:scale(.2)}50%,78%{opacity:1;transform:scale(1)}90%,100%{opacity:0}}
+    .bar{transform-box:fill-box;transform-origin:50% 100%;animation:bar 3.6s ease-in-out infinite alternate}
+    @keyframes bar{from{transform:scaleY(.25)}to{transform:scaleY(1)}}
+    .b2{animation-delay:.3s}.b3{animation-delay:.6s}.b4{animation-delay:.9s}.b5{animation-delay:1.2s}.b6{animation-delay:1.5s}
+    .tag{opacity:0;animation:tag 12s infinite}
+    .t2{animation-delay:4s}.t3{animation-delay:8s}
+    @keyframes tag{0%{opacity:0;transform:translateY(8px)}4%,29%{opacity:1;transform:translateY(0)}33%,100%{opacity:0;transform:translateY(-8px)}}
+    .cur{animation:blink 1s steps(1) infinite}
+    @keyframes blink{50%{opacity:0}}
+    .live{animation:pulse 1.8s ease-in-out infinite}
+    @keyframes pulse{50%{opacity:.25}}
+  </style>
+
+  <g clip-path="url(#frame)">
+    <rect width="1000" height="280" fill="url(#bg)"/>
+    <circle class="glowA" cx="160" cy="60" r="230" fill="url(#glowA)"/>
+    <circle class="glowB" cx="860" cy="230" r="260" fill="url(#glowB)"/>
+    <circle class="glowC" cx="520" cy="300" r="220" fill="url(#glowC)"/>
+    <rect width="1000" height="280" fill="url(#dots)"/>
+
+    <!-- Graphique décoratif : courbe qui se dessine, aire, points, barres -->
+    <g transform="translate(640,52)">
+      <path d="M0 150 H310 M0 100 H310 M0 50 H310" stroke="#ffffff" stroke-opacity=".07"/>
+      <path class="areaf" d="M0 140 C40 130 60 112 92 104 S150 116 182 84 S240 40 270 36 S300 20 310 14 V170 H0 Z" fill="url(#area)"/>
+      <path class="draw" d="M0 140 C40 130 60 112 92 104 S150 116 182 84 S240 40 270 36 S300 20 310 14" fill="none" stroke="url(#line)" stroke-width="3" stroke-linecap="round"/>
+      <circle class="pt" style="transform-origin:92px 104px" cx="92" cy="104" r="5" fill="#58a6ff"/>
+      <circle class="pt" style="transform-origin:182px 84px;animation-delay:.25s" cx="182" cy="84" r="5" fill="#a78bfa"/>
+      <circle class="pt" style="transform-origin:270px 36px;animation-delay:.5s" cx="270" cy="36" r="5" fill="#e94560"/>
+      <g transform="translate(14,176)">
+        <rect class="bar"    x="0"   y="-34" width="26" height="34" rx="4" fill="#58a6ff" fill-opacity=".55"/>
+        <rect class="bar b2" x="50"  y="-52" width="26" height="52" rx="4" fill="#58a6ff" fill-opacity=".55"/>
+        <rect class="bar b3" x="100" y="-28" width="26" height="28" rx="4" fill="#a78bfa" fill-opacity=".55"/>
+        <rect class="bar b4" x="150" y="-64" width="26" height="64" rx="4" fill="#a78bfa" fill-opacity=".55"/>
+        <rect class="bar b5" x="200" y="-46" width="26" height="46" rx="4" fill="#e94560" fill-opacity=".55"/>
+        <rect class="bar b6" x="250" y="-72" width="26" height="72" rx="4" fill="#e94560" fill-opacity=".55"/>
+      </g>
+    </g>
+
+    <!-- Texte -->
+    <g class="up d1"><circle class="live" cx="66" cy="62" r="5" fill="#22c55e"/>
+      <text x="80" y="67" class="mono" font-size="13" fill="#8b949e" letter-spacing="2">github.com/gomugomuno01</text></g>
+    <text x="60" y="122" class="sans up d2" font-size="52" font-weight="800" fill="#ffffff">Cédric Kouadio</text>
+    <text x="62" y="160" class="sans up d3" font-size="18" font-weight="600" fill="#e6edf3">Développeur Fullstack · Data (Analyst, Scientist, Engineer)</text>
+    <text x="62" y="186" class="sans up d3" font-size="18" font-weight="600" fill="#e94560">Automatisation &amp; Agents IA</text>
+
+    <g class="up d4">
+      <text x="62" y="234" class="mono" font-size="15" fill="#58a6ff">&gt;</text>
+      <text x="82" y="234" class="mono tag"    font-size="15" fill="#c9d1d9">Du backend au dashboard : des outils qui tournent vraiment</text>
+      <text x="82" y="234" class="mono tag t2" font-size="15" fill="#c9d1d9">Transforme des données brutes en décisions</text>
+      <text x="82" y="234" class="mono tag t3" font-size="15" fill="#c9d1d9">Automatise les tâches répétitives avec Python et des agents IA</text>
+    </g>
+  </g>
+</svg>
