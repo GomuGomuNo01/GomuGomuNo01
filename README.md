@@ -7,6 +7,14 @@
 [![Portfolio](https://img.shields.io/badge/Portfolio-cedric--kouadio--portfolio.onrender.com-1a1a2e?style=flat-square&logo=render&logoColor=white)](https://cedric-kouadio-portfolio.onrender.com)
 
 
+<a href="https://cedric-kouadio-portfolio.onrender.com/">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/GomuGomuNo01/GomuGomuNo01/output/activity-card-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/GomuGomuNo01/GomuGomuNo01/output/activity-card-light.svg">
+  <img width="100%" src="https://raw.githubusercontent.com/GomuGomuNo01/GomuGomuNo01/output/activity-card-dark.svg" alt="Activité GitHub : contributions des 12 derniers mois, jours actifs, séries, dépôts publics, langages et activité récente"/>
+</picture>
+</a>
+
 </div>
 
 <img width="100%" src="assets/divider.svg" alt=""/>
@@ -289,19 +297,3 @@ Déploiement sur Render, Hugging Face Spaces, Streamlit Community Cloud et GitHu
 |---|---|---|
 | [AWS SimuLearn : Les fondamentaux du cloud](certificates/AWS_SimuLearn_Les_fondamentaux_du_cloud.pdf) | AWS Training & Certification | Septembre 2026 |
 | [AWS SimuLearn : Premiers pas dans le cloud](certificates/AWS_SimuLearn_Premiers_pas_dans_le_cloud.pdf) | AWS Training & Certification | Septembre 2026 |
-
-<img width="100%" src="assets/divider.svg" alt=""/>
-
-## Activité
-
-<div align="center">
-
-<a href="https://cedric-kouadio-portfolio.onrender.com/">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/GomuGomuNo01/GomuGomuNo01/output/activity-card-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/GomuGomuNo01/GomuGomuNo01/output/activity-card-light.svg">
-  <img width="100%" src="https://raw.githubusercontent.com/GomuGomuNo01/GomuGomuNo01/output/activity-card-dark.svg" alt="Activité GitHub : contributions des 12 derniers mois, jours actifs, séries, dépôts publics, langages et activité récente"/>
-</picture>
-</a>
-
-</div>
