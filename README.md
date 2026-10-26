@@ -186,7 +186,7 @@ Six tâches répétitives, comme le suivi des stocks, l’envoi d’e-mails et l
 
 ### [Suivi des demandes Habitat Presto](https://github.com/GomuGomuNo01/monthimmo-cas-pratique)
 
-Le pôle travaux d'une entreprise reçoit des demandes clients par email, qu'il faut recopier à la main sous peine de les oublier. Cet outil lit chaque demande avec l'IA, la range dans un tableau de suivi sans créer de doublon et prévient le conducteur de travaux par email, même quand une demande est incomplète ou que le service de lecture tombe en panne. Plus de vingt scénarios testés, sur de fausses données.
+Le pôle travaux d'une entreprise reçoit des demandes clients par email, qu'il faut recopier à la main sous peine de les oublier. Cet outil lit chaque demande avec l'IA, la range dans un tableau de suivi sans créer de doublon et prévient le conducteur de travaux par email, même quand une demande est incomplète ou que le service de lecture tombe en panne. Plus de vingt scénarios testés, sur des données fictives.
 
 `n8n` `Claude Haiku` `Airtable` `Gmail`
 
