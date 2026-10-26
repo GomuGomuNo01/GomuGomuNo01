@@ -184,6 +184,12 @@ Six tâches répétitives, comme le suivi des stocks, l’envoi d’e-mails et l
 
 `Python` `Selenium` `pandas` `openpyxl` `Streamlit`
 
+### [Suivi des demandes Habitat Presto](https://github.com/GomuGomuNo01/monthimmo-cas-pratique)
+
+Le pôle travaux d'une entreprise reçoit des demandes clients par email, qu'il faut recopier à la main sous peine de les oublier. Cet outil lit chaque demande avec l'IA, la range dans un tableau de suivi sans créer de doublon et prévient le conducteur de travaux par email, même quand une demande est incomplète ou que le service de lecture tombe en panne. Plus de vingt scénarios testés, sur de fausses données.
+
+`n8n` `Claude Haiku` `Airtable` `Gmail`
+
 <img width="100%" src="assets/divider.svg" alt=""/>
 
 ## Projets Développement Fullstack
@@ -265,11 +271,13 @@ API REST sécurisées (JWT), temps réel (WebSocket), architecture en couches, t
 **Automatisation & Tests**
 
 ![Selenium](https://img.shields.io/badge/Selenium-43B02A?style=flat-square&logo=selenium&logoColor=white)
+![n8n](https://img.shields.io/badge/n8n-EA4B71?style=flat-square&logo=n8n&logoColor=white)
+![Airtable](https://img.shields.io/badge/Airtable-18BFFF?style=flat-square&logo=airtable&logoColor=black)
 ![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white)
 ![pytest](https://img.shields.io/badge/pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
 
-Collecte de données web, envoi d'e-mails SMTP, orchestration TEST / PRODUCTION, intégration continue
+Workflows n8n et tableaux Airtable, lecture d'emails par IA, collecte de données web, envoi d'e-mails SMTP, orchestration TEST / PRODUCTION, intégration continue
 
 **Bases de données**
 
