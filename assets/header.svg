@@ -42,7 +42,7 @@
     .bar{transform-box:fill-box;transform-origin:50% 100%;animation:bar 3.6s ease-in-out infinite alternate}
     @keyframes bar{from{transform:scaleY(.25)}to{transform:scaleY(1)}}
     .b2{animation-delay:.3s}.b3{animation-delay:.6s}.b4{animation-delay:.9s}.b5{animation-delay:1.2s}.b6{animation-delay:1.5s}
-    .tag{opacity:0;animation:tag 35s infinite}
+    .tag{opacity:0;animation:tag 38.5s infinite}
     .t1{animation-delay:0s}
     .t2{animation-delay:3.5s}
     .t3{animation-delay:7s}
@@ -53,7 +53,8 @@
     .t8{animation-delay:24.5s}
     .t9{animation-delay:28s}
     .t10{animation-delay:31.5s}
-    @keyframes tag{0%{opacity:0;transform:translateY(8px)}1.00%,8.80%{opacity:1;transform:translateY(0)}10.00%,100%{opacity:0;transform:translateY(-8px)}}
+    .t11{animation-delay:35s}
+    @keyframes tag{0%{opacity:0;transform:translateY(8px)}0.91%,8.00%{opacity:1;transform:translateY(0)}9.09%,100%{opacity:0;transform:translateY(-8px)}}
     .cur{animation:blink 1s steps(1) infinite}
     @keyframes blink{50%{opacity:0}}
     .live{animation:pulse 1.8s ease-in-out infinite}
@@ -100,10 +101,11 @@
       <text x="82" y="234" class="mono tag t4" font-size="15" fill="#c9d1d9">Prédire des comportements avec le machine learning</text>
       <text x="82" y="234" class="mono tag t5" font-size="15" fill="#c9d1d9">Construire des assistants IA qui citent leurs sources</text>
       <text x="82" y="234" class="mono tag t6" font-size="15" fill="#c9d1d9">Automatiser les tâches répétitives avec Python</text>
-      <text x="82" y="234" class="mono tag t7" font-size="15" fill="#c9d1d9">Développer des applications web, de l'API à l'interface</text>
-      <text x="82" y="234" class="mono tag t8" font-size="15" fill="#c9d1d9">Intégrer paiement mobile et temps réel dans une application</text>
-      <text x="82" y="234" class="mono tag t9" font-size="15" fill="#c9d1d9">Sécuriser les API et les données : JWT, rôles, audit</text>
-      <text x="82" y="234" class="mono tag t10" font-size="15" fill="#c9d1d9">Fiabiliser chaque livraison par des tests automatisés</text>
+      <text x="82" y="234" class="mono tag t7" font-size="15" fill="#c9d1d9">Orchestrer des workflows n8n qui lisent, rangent et alertent</text>
+      <text x="82" y="234" class="mono tag t8" font-size="15" fill="#c9d1d9">Développer des applications web, de l'API à l'interface</text>
+      <text x="82" y="234" class="mono tag t9" font-size="15" fill="#c9d1d9">Intégrer paiement mobile et temps réel dans une application</text>
+      <text x="82" y="234" class="mono tag t10" font-size="15" fill="#c9d1d9">Sécuriser les API et les données : JWT, rôles, audit</text>
+      <text x="82" y="234" class="mono tag t11" font-size="15" fill="#c9d1d9">Fiabiliser chaque livraison par des tests automatisés</text>
     </g>
   </g>
 </svg>

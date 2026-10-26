@@ -11,7 +11,7 @@ ROW1 = [("Python", "#3776AB"), ("pandas", "#150458"), ("NumPy", "#013243"), ("SQ
 ROW2 = [("React", "#61DAFB"), ("TypeScript", "#3178C6"), ("Tailwind CSS", "#06B6D4"), ("Vite", "#646CFF"),
         ("FastAPI", "#009688"), ("Laravel", "#FF2D20"), ("PHP", "#777BB4"), ("Java", "#ED8B00"),
         ("Spring Boot", "#6DB33F"), ("C#", "#512BD4"), ("ASP.NET Core", "#5C2D91"), ("MySQL", "#4479A1"),
-        ("PostgreSQL", "#336791"), ("SQLite", "#003B57"), ("Selenium", "#43B02A"), ("Playwright", "#2EAD33"),
+        ("PostgreSQL", "#336791"), ("SQLite", "#003B57"), ("Selenium", "#43B02A"), ("Playwright", "#2EAD33"), ("n8n", "#EA4B71"), ("Airtable", "#18BFFF"),
         ("pytest", "#0A9EDC"), ("Docker", "#2496ED"), ("GitHub Actions", "#2088FF"), ("Git", "#F05032")]
 
 
